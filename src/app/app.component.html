@@ -12,9 +12,10 @@
             <img class="headerIconSmall" src="../assets/images/canoe-athlete.svg">
             <h1>Cairde na Farraige</h1>
         </div>    
-        <span class="headerDetails col-lg-4">Cahersiveen Marina<br>08812341567 - <a href="./">placeholder@email.com</a></span>
+        <span class="headerDetails col-lg-2 offset-5">Cahersiveen Marina<br>08812341567 - <a href="./">placeholder@email.com</a></span>
     </div>
 </header>
+<app-nav-bar></app-nav-bar>
 
 <div id="sideMenu" class="sideMenu" [ngClass]="{'opened': menuOpened}">
     <div class="menuHeader">
@@ -32,19 +33,21 @@
     </div>
 
     <div class="menuOptions">
-        <div class="menuOption">
+        <div class="menuOption" (click)="optionClicked($event)">
             <span>Home</span>
         </div>
-        <div class="menuOption">
+        <div class="menuOption" (click)="optionClicked($event)">
             <span>Sea Kayaking</span>
         </div>
-        <div class="menuOption">
+        <div class="menuOption" (click)="optionClicked($event)">
             <span>River Kayaking</span>
         </div>
-        <div class="menuOption">
+        <div class="menuOption" (click)="optionClicked($event)">
             <span>Contact Us</span>
         </div>
     </div>    
 </div>
 
-<router-outlet></router-outlet>
+<div class="mainContainer">
+    <router-outlet></router-outlet>
+</div>
