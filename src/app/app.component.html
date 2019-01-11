@@ -1,10 +1,50 @@
 <header>
-  <img class="headerIcon" src="../assets/images/canoe-athlete.svg">
-  <div class="row">
-    <h1 class="col-4">Cairde na Farraige</h1>
-    <span class="headerDetails col-4 offset-3">Cahersiveen Marina<br>08812341567 - <a href="./">placeholder@email.com</a></span>
-  </div>
-  
+    <div class="row">
+        <img class="headerIcon" src="../assets/images/canoe-athlete.svg">
+        <div class="col-lg-0 col-md-0 col-sm-2 col-2 menuButtonContainer">
+            <div class="menuButton" (click)="menuButtonClicked()" [ngClass]="{'opened': menuOpened}">
+                <div class="menuIcon" id="menuIcon1"></div>
+                <div class="menuIcon" id="menuIcon2"></div>
+                <div class="menuIcon" id="menuIcon3"></div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-10 col-10">
+            <img class="headerIconSmall" src="../assets/images/canoe-athlete.svg">
+            <h1>Cairde na Farraige</h1>
+        </div>    
+        <span class="headerDetails col-lg-4">Cahersiveen Marina<br>08812341567 - <a href="./">placeholder@email.com</a></span>
+    </div>
 </header>
+
+<div id="sideMenu" class="sideMenu" [ngClass]="{'opened': menuOpened}">
+    <div class="menuHeader">
+        <div class="iconContainer">
+            <img src="../assets/images/canoe-athlete-white.svg">
+        </div>
+        <div class="generalInfo container">
+            <div class="row">
+                <a class="contactNumber" href="tel:0884782688">0884782688</a>
+            </div>
+            <div class="row">
+                <a class="email" href="mailto:placeholder@here.ie">placeholder@here.ie</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="menuOptions">
+        <div class="menuOption">
+            <span>Home</span>
+        </div>
+        <div class="menuOption">
+            <span>Sea Kayaking</span>
+        </div>
+        <div class="menuOption">
+            <span>River Kayaking</span>
+        </div>
+        <div class="menuOption">
+            <span>Contact Us</span>
+        </div>
+    </div>    
+</div>
 
 <router-outlet></router-outlet>

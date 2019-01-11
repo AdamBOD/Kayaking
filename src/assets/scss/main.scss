@@ -7,25 +7,84 @@ body {
     vertical-align: baseline;
     font-family: Arial, Helvetica, sans-serif;
     header {
-        height: 150px;
+        height: auto;
         margin: 0;
+        background-color: azure;
         display: flex;
         padding-left: 15px;
+        border-bottom: 3px solid #001cff9e;
 
-        .headerIcon {
-            width: 100px;
-            height: 100px;
-            margin-right: 15px;
-            margin-top: 45px;
-        }
         div.row {
-            width: calc(100% - 100px);
-            background-image: linear-gradient(90deg, #ffffff 10%, #001cff9e);
-            h1 {
-                margin: 0;
-                vertical-align: text-bottom;
-                line-height: 240px;
+            width: 100%;
+
+            .headerIcon {
+                width: 100px;
+                height: 100px;
+                margin-right: 15px;
+                margin-top: 45px;
             }
+
+            .menuButtonContainer {
+                display: none;
+                padding-left: 25px;
+                padding-right: 5px;
+
+                .menuButton {
+                    width: 20px;
+                    height: 20px;
+                    margin-top: 65px;
+                    z-index: 9999;
+                    position: absolute;
+                    
+                    .menuIcon {
+                        height: 25%;
+                        width: 100%;
+                        background-color: #D6D8DE;
+                        opacity: 100;
+                        margin: 4px;
+                        margin-left: 4px;
+                        margin-right: 0px;
+                        border-radius: 15px;
+                        transition: 0.5s;
+                    }
+
+                    &:hover {
+                        .menuIcon {
+                            background-color: #8E9094;
+                        }
+                    }
+    
+                    &.opened #menuIcon1 {
+                        -webkit-transform: rotate(-405deg) translate(-5px, 10px);
+                        transform: rotate(-405deg) translate(-5px, 10px);
+                    }
+    
+                    &.opened #menuIcon2 {
+                        opacity: 0;
+                    }
+    
+                    &.opened #menuIcon3 {
+                        -webkit-transform: rotate(405deg) translate(-3px, -8px);
+                        transform: rotate(405deg) translate(-3px, -8px);
+                    }
+                }
+            }            
+
+            div {
+                height: 100px;
+
+                .headerIconSmall {
+                    width: 45px;
+                    height: 45px;
+                    display: none;
+                }
+
+                h1 {
+                    vertical-align: text-bottom;
+                    line-height: 240px;
+                }
+            }
+            
 
             .headerDetails {
                 width: 250px;
@@ -39,5 +98,167 @@ body {
             }
         }
         
+    }
+
+    .sideMenu {
+        user-select: none;
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #252526;
+        overflow-x: hidden;
+        -webkit-transition: width 0.5s ease-in-out;
+        transition: width 0.5s ease-in-out;
+        padding-top: 100px;
+
+        display: none;
+
+        &.opened {
+            width: 75%;
+        }
+
+        .menuHeader {
+            height: 130px;
+            transition: none;
+
+            .iconContainer {
+                height: 75px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                
+                img {
+                    height: 75px;
+                }
+            }
+
+            .generalInfo {
+                margin-top: 15px;
+                margin-bottom: 15px;
+                .contactNumber {
+                    font-size: 20px;
+                    color: #D6D8DE;
+                    width: 100%;
+                    text-align: center;
+                    text-decoration: underline;
+                }
+
+                .email {
+                    color: #D6D8DE;
+                    width: 100%;
+                    text-align: center;
+                    text-decoration: underline;
+                }
+            }
+        }
+        .menuOptions {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            .menuOption {
+                height: 50px;
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #D6D8DE;
+                display: block;
+                transition: 0.3s;
+    
+                &.opened {
+                    width: 100%;
+                }
+    
+                &:hover {
+                    color: #8E9094;
+                    background-color: #404142;
+                }
+    
+                span {
+                    text-overflow: clip;
+                    white-space: nowrap;
+                }
+            }
+        }
+
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        header {
+            height: 100px;
+            padding-left: 0px;
+            div.row {
+                .headerIcon {
+                    display: none;
+                }
+
+                .menuButtonContainer {
+                    display: block;
+                }
+
+                div {
+                    .headerIconSmall {
+                        display: block;
+                        margin-left: 35%;
+                    }
+                    
+                    h1 {
+                        font-size: 35px;
+                        line-height: 45px;
+                    }
+                }
+
+                .headerDetails {
+                    display: none;
+                }
+            }
+        }
+
+        .sideMenu {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    body {
+        header {
+            div.row {
+                div {
+                    h1 {
+                        font-size: 32px;
+                        line-height: 65px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        header {
+            div.row {
+                .headerIcon {
+                    display: none;
+                }
+
+                div {
+                    .headerIconSmall {
+                        display: block;
+                        margin-left: 35%;
+                    }
+
+                    h1 {
+                        font-size: 28px;
+                        line-height: 65px;
+                    }
+                }
+            }
+        }
     }
 }
