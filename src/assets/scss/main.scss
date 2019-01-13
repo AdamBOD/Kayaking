@@ -144,6 +144,28 @@ body {
         .owl-carousel {
             .owl-nav {
                 width: 1000px;
+                position: absolute;
+                left: 55px;
+                top: 250px;
+
+                div {
+                    background: transparent;
+                    font-size: 50px;
+                    opacity: 0.6;
+
+                    &:hover {
+                        background-color: transparent;
+                        opacity: 1;
+                    }
+                }
+
+                .owl-prev {
+                    float: left;
+                }
+                
+                .owl-next {
+                    float: right;
+                }
             }
 
             .owl-dots {
@@ -289,7 +311,21 @@ body {
                 z-index: 0;
 
                 .owl-nav {
-                    display: none;
+                    width: 350px;
+                    position: absolute;
+                    left: 0px;
+                    top: 85px;
+
+                    div {
+                        background: transparent;
+                        font-size: 50px;
+                        opacity: 0.6;
+    
+                        &:hover {
+                            background-color: transparent;
+                            opacity: 1;
+                        }
+                    }
                 }
 
                 .owl-dots {

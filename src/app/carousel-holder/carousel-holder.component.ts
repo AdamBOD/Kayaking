@@ -15,7 +15,7 @@ export class CarouselHolderComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ["<i class='fas fa-angle-left'>", "<i class='fas fa-angle-right'>"],
     responsive: {
       0: {
         items: 1
