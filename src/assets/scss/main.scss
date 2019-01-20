@@ -7,6 +7,11 @@ body {
     vertical-align: baseline;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #fdfcfc8a;
+
+    &.overlayOpen {
+        overflow: hidden;
+    }
+
     header {
         height: 150px;
         margin: 0;
@@ -209,7 +214,6 @@ body {
         -webkit-transition: width 0.5s ease-in-out;
         transition: width 0.5s ease-in-out;
         padding-top: 100px;
-
         display: none;
 
         &.opened {
@@ -251,6 +255,7 @@ body {
                 }
             }
         }
+
         .menuOptions {
             margin-top: 15px;
             margin-bottom: 15px;
@@ -279,6 +284,23 @@ body {
             }
         }
 
+    }
+
+    .sideMenuOverlay {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #404142;
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.2s;
+
+        &.opened {
+            opacity: 0.4;
+            pointer-events: all;
+        }
     }
 }
 
