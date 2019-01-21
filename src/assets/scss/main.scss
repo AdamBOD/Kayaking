@@ -206,7 +206,7 @@ body {
         height: 100%;
         width: 0;
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         top: 0;
         left: 0;
         background-color: #252526;
@@ -296,6 +296,7 @@ body {
         opacity: 0;
         pointer-events: none;
         transition: 0.2s;
+        z-index: 1;
 
         &.opened {
             opacity: 0.4;
