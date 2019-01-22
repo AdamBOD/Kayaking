@@ -16,7 +16,6 @@ export class AppComponent {
                 @Inject(DOCUMENT) private document: Document,) {}
     
     menuButtonClicked () {
-        console.log ("Clicked");
         this.menuOpened = !this.menuOpened;
 
         if (this.menuOpened) {
