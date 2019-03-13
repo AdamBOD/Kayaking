@@ -10,9 +10,10 @@ import { AppComponent } from './app.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { SeaKayakingComponent } from './sea-kayaking/sea-kayaking.component';
-import { RiverKayakingComponent } from './river-kayaking/river-kayaking.component';
+import { CanoeingComponent } from './canoeing/canoeing.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CarouselHolderComponent } from './carousel-holder/carousel-holder.component';
+import { SUPComponent } from './sup/sup.component';
 
 @NgModule({
   declarations: [
@@ -20,9 +21,10 @@ import { CarouselHolderComponent } from './carousel-holder/carousel-holder.compo
     NavBarComponent,
     HomeComponent,
     SeaKayakingComponent,
-    RiverKayakingComponent,
+    CanoeingComponent,
     ContactUsComponent,
-    CarouselHolderComponent
+    CarouselHolderComponent,
+    SUPComponent
   ],
   imports: [
     BrowserModule,

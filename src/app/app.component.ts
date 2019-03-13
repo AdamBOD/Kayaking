@@ -28,6 +28,7 @@ export class AppComponent {
     optionClicked (event) {
         const option = event.currentTarget.children[0].innerText;
         var optionLink = option.toString().replace(" ", "-").toLowerCase();
+        optionLink = optionLink.replace(" ", "-");
         this.router.navigateByUrl (optionLink);
         this.menuOpened = false;
         this.renderer.removeClass (this.document.body, 'overlayOpen');

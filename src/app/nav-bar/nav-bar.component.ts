@@ -15,6 +15,7 @@ export class NavBarComponent implements OnInit {
   navButtonClicked (event) {
     const nav = event.currentTarget.innerText;
     var navLink = nav.toString().replace(" ", "-").toLowerCase();
+    navLink = navLink.replace(" ", "-");
     this.router.navigateByUrl (navLink);
   }
 }
